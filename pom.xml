@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<!-- Your own application should inherit from spring-boot-starter-parent -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.3.RELEASE</version>
 	</parent>
-	<artifactId>inventory-manager</artifactId>
+
 	<groupId>com.aleggeup.web</groupId>
+	<artifactId>spring-boot-starter-webapp</artifactId>
+	<version>0.9.0-SNAPSHOT</version>
+
 	<packaging>war</packaging>
-	<name>Spring Boot Web Static Sample</name>
-	<description>Spring Boot Web Static Sample</description>
-	<version>1.0-SNAPSHOT</version>
+
+	<name>Spring Boot Web Starter Webapp</name>
+	<description>Spring Boot Starter</description>
+
 	<url>http://projects.spring.io/spring-boot/</url>
 	<organization>
-		<name>Pivotal Software, Inc.</name>
-		<url>http://www.spring.io</url>
+		<name>[ A Legge Up ]</name>
+		<url>http://www.aleggeup.com</url>
 	</organization>
+
 	<properties>
 		<spring.boot.version>1.5.3.RELEASE</spring.boot.version>
 		<main.basedir>${basedir}/../..</main.basedir>
@@ -29,15 +36,18 @@
 		<jjwt.version>0.6.0</jjwt.version>
 		<junit.version>4.12</junit.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -132,6 +142,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+
 				<executions>
 					<execution>
 						<goals>
@@ -144,6 +155,7 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
+
 				<executions>
 					<execution>
 						<id>default-compile</id>
@@ -168,6 +180,7 @@
 						</configuration>
 					</execution>
 				</executions>
+
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
