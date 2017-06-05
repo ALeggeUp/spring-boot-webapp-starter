@@ -19,7 +19,15 @@
 		<url>http://www.spring.io</url>
 	</organization>
 	<properties>
+		<spring.boot.version>1.5.3.RELEASE</spring.boot.version>
 		<main.basedir>${basedir}/../..</main.basedir>
+
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<commons.io.version>2.4</commons.io.version>
+		<jjwt.version>0.6.0</jjwt.version>
+		<junit.version>4.12</junit.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -48,10 +56,18 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons.io.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${jjwt.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.webjars/angularjs -->
@@ -96,6 +112,19 @@
 			<version>4.7.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -103,6 +132,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
@@ -116,8 +152,8 @@
 							<goal>compile</goal>
 						</goals>
 						<configuration>
-							<source>1.7</source>
-							<target>1.7</target>
+							<source>${maven.compiler.source}</source>
+							<target>${maven.compiler.target}</target>
 						</configuration>
 					</execution>
 					<execution>
@@ -127,14 +163,14 @@
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
-							<source>1.7</source>
-							<target>1.7</target>
+							<source>${maven.compiler.source}</source>
+							<target>${maven.compiler.target}</target>
 						</configuration>
 					</execution>
 				</executions>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
 		</plugins>
