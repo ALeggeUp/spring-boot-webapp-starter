@@ -20,7 +20,7 @@ public class WebApplication {
         return registrationBean;
     }
 
-    public static void main(final String[] args) throws Exception {
+    public static void jwtmain(final String[] args) throws Exception {
         SpringApplication.run(WebApplication.class, args);
     }
 

@@ -18,11 +18,14 @@ package com.aleggeup.inventory;
 
 import javax.sql.DataSource;
 
+import com.nibado.example.jwtangspr.JwtFilter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 import org.springframework.context.annotation.Bean;
@@ -43,6 +46,15 @@ public class InventoryManagerWebApplication extends SpringBootServletInitializer
     @Override
     protected SpringApplicationBuilder configure(final SpringApplicationBuilder application) {
         return application.sources(InventoryManagerWebApplication.class);
+    }
+
+    // @Bean
+    public FilterRegistrationBean jwtFilter() {
+        final FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+        registrationBean.setFilter(new JwtFilter());
+        registrationBean.addUrlPatterns("/api/*");
+
+        return registrationBean;
     }
 
     @Bean
