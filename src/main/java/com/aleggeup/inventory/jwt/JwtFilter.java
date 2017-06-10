@@ -1,4 +1,4 @@
-package com.nibado.example.jwtangspr;
+package com.aleggeup.inventory.jwt;
 
 import java.io.IOException;
 

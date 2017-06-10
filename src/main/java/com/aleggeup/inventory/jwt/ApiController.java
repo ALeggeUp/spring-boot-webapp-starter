@@ -1,4 +1,4 @@
-package com.nibado.example.jwtangspr;
+package com.aleggeup.inventory.jwt;
 
 import io.jsonwebtoken.Claims;
 
@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/jwt-api")
 public class ApiController {
+
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "role/{role}", method = RequestMethod.GET)
 	public Boolean login(@PathVariable final String role,

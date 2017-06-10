@@ -18,7 +18,7 @@ package com.aleggeup.inventory;
 
 import javax.sql.DataSource;
 
-import com.nibado.example.jwtangspr.JwtFilter;
+import com.aleggeup.inventory.jwt.JwtFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -48,11 +48,11 @@ public class InventoryManagerWebApplication extends SpringBootServletInitializer
         return application.sources(InventoryManagerWebApplication.class);
     }
 
-    // @Bean
+    @Bean
     public FilterRegistrationBean jwtFilter() {
         final FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new JwtFilter());
-        registrationBean.addUrlPatterns("/api/*");
+        registrationBean.addUrlPatterns("/jwt-api/*");
 
         return registrationBean;
     }

@@ -50,7 +50,7 @@ appModule.service('mainService', function($http) {
         },
 
         hasRole : function(role) {
-            return $http.get('/api/role/' + role).then(function(response){
+            return $http.get('/jwt-api/role/' + role).then(function(response){
                 console.log(response);
                 return response.data;
             });
